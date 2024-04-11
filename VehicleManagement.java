@@ -20,7 +20,6 @@ public class VehicleManagement {
       
          switch (choice) {
             case 1:
-                    // Add vehicle
                System.out.print("Enter registration number: ");
                String regNo = scanner.nextLine();
                System.out.print("Enter make: ");
@@ -34,21 +33,18 @@ public class VehicleManagement {
                System.out.println("Vehicle added successfully!");
                break;
             case 2:
-                    // Display vehicle list
                System.out.println("List of vehicle details:");
                for (Vehicle v : vehicleList) {
                   System.out.println(v);
                }
                break;
             case 3:
-            // Delete vehicle
                System.out.print("Enter the index of the vehicle to delete: ");
                int indexToDelete = scanner.nextInt();
-               scanner.nextLine(); // consume newline
+               scanner.nextLine();
                if (indexToDelete >= 1 && indexToDelete <= vehicleList.size()) {
-                  vehicleList.remove(indexToDelete - 1); // Adjust index to start from 0
+                  vehicleList.remove(indexToDelete - 1);
                   System.out.println("Vehicle deleted successfully!");
-               // Adjusting indexes for display
                   for (int i = indexToDelete - 1; i < vehicleList.size(); i++) {
                      Vehicle vehicle = vehicleList.get(i);        }
                } else {
@@ -64,11 +60,10 @@ public class VehicleManagement {
                   System.out.println("3. Back to main menu");
                   System.out.print("Enter your choice: ");
                   sortChoice = scanner.nextInt();
-                  scanner.nextLine(); // consume newline
+                  scanner.nextLine();
                
                   switch (sortChoice) {
                      case 1:
-                     // Sort by age (ascending)
                         for (int i = 0; i < vehicleList.size() - 1; i++) {
                            for (int j = 0; j < vehicleList.size() - i - 1; j++) {
                               if (vehicleList.get(j).calculateAge(2024) < vehicleList.get(j + 1).calculateAge(2024)) {
@@ -85,7 +80,6 @@ public class VehicleManagement {
                         System.out.print("\n");
                         break;
                      case 2:
-                     // Sort by age (descending)
                         for (int i = 0; i < vehicleList.size() - 1; i++) {
                            for (int j = 0; j < vehicleList.size() - i - 1; j++) {
                               if (vehicleList.get(j).calculateAge(2024) > vehicleList.get(j + 1).calculateAge(2024)) {
