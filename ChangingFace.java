@@ -74,7 +74,7 @@ public class ChangingFace extends Application {
         colorPicker.setOnAction(e -> face.setFill(colorPicker.getValue()));
         // add the scene to the stage, then set the title
         stage.setScene(scene);
-        stage.setTitle("Changing Face");
+        stage.setTitle("Changing Face by Adrian Labisores");
         // show the stage
         stage.show();
     }
